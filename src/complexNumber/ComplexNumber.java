@@ -1,4 +1,4 @@
-package may_28.complexNumber;
+package complexNumber;
 
 public final class ComplexNumber {
     private final double re;

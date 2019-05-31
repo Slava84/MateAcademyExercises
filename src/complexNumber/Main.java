@@ -1,4 +1,4 @@
-package may_28.complexNumber;
+package complexNumber;
 
 public class Main {
     public static void main(String[] args) {
