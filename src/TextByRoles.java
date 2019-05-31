@@ -1,5 +1,3 @@
-package may_28;
-
 public class TextByRoles {
     private static StringBuffer strBuf = new StringBuffer(1000);
 
@@ -36,5 +34,4 @@ public class TextByRoles {
         }
         return strBuf.toString();
     }
-
 }
