@@ -1,5 +1,3 @@
-package may_28;
-
 import java.util.Arrays;
 
 public class MergeTwoArrays {
@@ -9,10 +7,10 @@ public class MergeTwoArrays {
         System.out.println(Arrays.toString(mergeArrays(array1, array2)));
     }
 
-    private static int[] mergeArrays(int[] arr1, int[] arr2){
-        int[] resultArrays = new  int [arr1.length + arr2.length];
-        System.arraycopy(arr1, 0, resultArrays, 0, arr1.length);
-        System.arraycopy(arr2, 0, resultArrays, arr1.length, arr2.length);
+    public static int[] mergeArrays(int[] a1, int[] a2){
+        int[] resultArrays = new  int [a1.length + a2.length];
+        System.arraycopy(a1, 0, resultArrays, 0, a1.length);
+        System.arraycopy(a2, 0, resultArrays, a1.length, a2.length);
         return sort(resultArrays);
     }
 
@@ -26,8 +24,6 @@ public class MergeTwoArrays {
                 }
             }
         }
-
         return arr;
     }
-
 }
