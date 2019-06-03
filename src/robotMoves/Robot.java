@@ -1,4 +1,4 @@
-package may_28.robotMoves;
+package robotMoves;
 
 public class Robot {
     private Direction direction = Direction.UP;

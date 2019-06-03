@@ -1,6 +1,6 @@
-package may_28.robotMoves;
+package robotMoves;
 
-public class RobotManagement {
+public class RobotManagementApp {
     private static MoveAlongX moveAlongX = new MoveAlongX();
     private static MoveAlongY moveAlongY = new MoveAlongY();
 

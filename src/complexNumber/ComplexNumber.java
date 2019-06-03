@@ -29,6 +29,6 @@ public final class ComplexNumber {
 
     @Override
     public int hashCode() {
-        return Double.hashCode(getRe());
+        return (int) (31 * (getRe() * getIm() - getIm()));
     }
 }
