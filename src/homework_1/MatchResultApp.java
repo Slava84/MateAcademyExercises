@@ -1,6 +1,6 @@
 package homework_1;
 
-public class MatchResult {
+public class MatchResultApp {
     public static void main(String[] args) {
         System.out.println("Не вгаданний результат матчу. " + similarityCheck(2, 0, 0, 2));
         System.out.println("Не вгаданний результат матчу. " + similarityCheck(0, 2, 2, 0));
@@ -16,10 +16,10 @@ public class MatchResult {
         System.out.println("Вгаданний рахунок матчу. " + similarityCheck(1, 1, 1, 1));
     }
 
-    private static int similarityCheck(int a, int b, int c, int d){
-        int result = 0;
-
-        result = ((a < b && c < d) || (a > b && c > d) || (a == b && c == d)) ? ++result : result;
-        return  (a == c && b == d) ? ++result : result;
+    private static int similarityCheck(int gsTmA, int gsTmB, int possGsTmA, int possGsTmB) {
+        return (gsTmA == possGsTmA && gsTmB == possGsTmB) ? 2
+                : (gsTmA < gsTmB && possGsTmA < possGsTmB)
+                || (gsTmA > gsTmB && possGsTmA > possGsTmB)
+                || (gsTmA == gsTmB && possGsTmA == possGsTmB) ? 1 : 0;
     }
 }

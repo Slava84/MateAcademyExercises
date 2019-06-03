@@ -1,12 +1,13 @@
 package homework_1;
 
-public class Rhombus {
+public class RhombusApp {
     public static void main(String[] args) {
         printRhombus(3);
     }
 
     private static void printRhombus(int size) {
-        int start, end;
+        int start;
+        int end;
         boolean flag1 = true;
         size += size - 1;
         start = end = (size / 2) + 1;
