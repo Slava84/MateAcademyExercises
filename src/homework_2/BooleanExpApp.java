@@ -1,6 +1,6 @@
 package homework_2;
 
-public class BooleanExp {
+public class BooleanExpApp {
     public static void main(String[] args) {
         System.out.println("true, false, false, false  = " + booleanExpression(true, false, false, false));
         System.out.println("false, true, false, false  = " + booleanExpression(false, true, false, false));
@@ -16,12 +16,6 @@ public class BooleanExp {
     }
 
     private static boolean booleanExpression(boolean a, boolean b, boolean c, boolean d) {
-        if ((a == true && b == true) ^ (c == true && d == true)) {
-            return true;
-        } else if ((a == true && d == true) ^ (b == true && c == true)) {
-            return true;
-        } else if ((a == true && c == true) ^ (b == true && d == true)) {
-            return true;
-        } else return false;
+        return ((a ^ b && c ^ d) || (a ^ c && b ^ d));
     }
 }

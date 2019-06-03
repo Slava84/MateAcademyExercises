@@ -1,6 +1,6 @@
 package homework_2;
 
-public class LeapYearCount {
+public class LeapYearCountApp {
     public static void main(String[] args) {
         System.out.println("Кількість високосних років в 3-му році нашої ери: " + leapYearCount(3));
         System.out.println("Кількість високосних років в 4-му році нашої ери: " + leapYearCount(4));
@@ -12,5 +12,4 @@ public class LeapYearCount {
     private static int leapYearCount(int year) {
         return year / 4 - year / 100 + year / 400;
     }
-
 }
