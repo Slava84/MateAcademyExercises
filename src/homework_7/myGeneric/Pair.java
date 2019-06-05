@@ -10,7 +10,7 @@ class Pair<T, V> {
     }
 
     public static <T, V> Pair of(T first, V second) {
-        return new Pair<T, V>(first, second);
+        return new Pair<>(first, second);
     }
 
     public T getFirst() {
@@ -23,26 +23,20 @@ class Pair<T, V> {
 
     @Override
     public int hashCode() {
-        if (first != null && second != null) {
-            if (first instanceof Number && second instanceof CharSequence) {
-                return ((Integer) first) / ((CharSequence) second).length() * 31;
-
-            } else if (first instanceof CharSequence && second instanceof Number) {
-                return ((Integer) second) / ((CharSequence) first).length() * 31;
-
-            } else return super.hashCode();
-
+        if (getFirst() != null && getSecond() != null) {
+            return 31 * (getFirst().hashCode() - getSecond().hashCode());
         } else return super.hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Pair) {
-            if (this == obj || this.getClass() == obj.getClass()) {
-                return true;
-            } else if (this.first == ((Pair<T, V>) obj).first && this.second == ((Pair<T, V>) obj).second) {
-                return true;
-            } else return false;
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        } else if (this.first == ((Pair<?, ?>) obj).first && this.second == ((Pair<?, ?>) obj).second) {
+            return true;
         } else return false;
     }
 }

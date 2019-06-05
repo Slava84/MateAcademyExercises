@@ -1,16 +1,20 @@
 package homework_7.storage;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Storage<K, V> {
-    private Map<K, V> map = new HashMap<>();
+    private List<K> keys = new ArrayList<>();
+    private List<V> values = new ArrayList<>();
 
     public void put(K key, V value) {
-        map.put(key, value);
+        keys.add(key);
+        values.add(value);
     }
 
     public V get(K key) {
-        return map.get(key);
+        if (keys.contains(key)) {
+            return values.get(keys.indexOf(key));
+        } else return (V) new Box();
     }
 }

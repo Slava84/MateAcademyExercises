@@ -12,5 +12,9 @@ public class Main {
         box.setSomething("Dog");
         storage.put(7, box);
         System.out.println(storage.get(7).getSomething());
+
+        box.setSomething("Dog");
+        storage.put(7, box);
+        System.out.println(storage.get(10).getSomething());
     }
 }
