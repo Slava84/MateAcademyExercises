@@ -1,7 +1,7 @@
 package homework_5.robotConnection;
 
 public class RobotApp {
-    static RobotConnection robotConnection;
+    private static RobotConnection robotConnection;
 
     public static void main(String[] args) {
         try {
@@ -11,7 +11,7 @@ public class RobotApp {
         }
     }
 
-    public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
+    private static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
         for (int i = 0; i < 3; i++) {
             try {
                 robotConnection = robotConnectionManager.getConnection();
@@ -21,10 +21,12 @@ public class RobotApp {
                 if (i == 2) {
                     throw new RobotConnectionException("З'єднання, нажаль, не відбулось!");
                 }
-            } catch (Exception e) {
-                break;
             } finally {
-                robotConnection.close();
+                try {
+                    robotConnection.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage() + " Проблеми з закриттям!");
+                }
             }
         }
     }

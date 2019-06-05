@@ -1,6 +1,9 @@
 package homework_5;
 
-import java.util.logging.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.XMLFormatter;
 
 public class LoggerApp {
     public static void main(String[] args) {
