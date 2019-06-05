@@ -1,9 +1,9 @@
 package homework_6.cloning;
 
 public class Car implements Cloneable {
-    private String brand;
-    private String colour;
-    private int productionYear;
+    protected String brand;
+    protected String colour;
+    protected int productionYear;
 
     public Car(String brand, String colour, int productionYear) {
         this.brand = brand;
@@ -18,8 +18,32 @@ public class Car implements Cloneable {
 
     @Override
     public String toString() {
-        return "Марка автівки: " + brand +
-                ",\t колір: " + colour +
-                ", рік випуску: " + productionYear;
+        return "Марка автівки: " + getBrand() +
+                ",\t колір: " + getColour() +
+                ",\t рік випуску: " + getProductionYear();
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
+
+    public int getProductionYear() {
+        return productionYear;
+    }
+
+    public void setProductionYear(int productionYear) {
+        this.productionYear = productionYear;
     }
 }
