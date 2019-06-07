@@ -36,7 +36,7 @@ public class MyArrayList<T> implements List<T> {
             }
             if (flag) {
                 int counter = 0;
-                T[] tempArray = (T[]) new Object[array.length + array.length / 2];
+                T[] tempArray = (T[]) new Object[array.length + (array.length >> 1)];
 
                 for (int j = 0; j < array.length; j++) {
                     tempArray[j] = array[j];

@@ -8,6 +8,8 @@ public class Main {
         for (int i = 0; i < myArrayList1.size(); i++) {
             myArrayList1.add(i + 10);
         }
+
+        myArrayList1.add(20);
         myArrayList1.addAll(myArrayList2);
         myArrayList1.add(21, 11);
 
